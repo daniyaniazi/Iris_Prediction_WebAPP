@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block main %}
+
+
+
+<div class="container  mt-5">
+
+    <h2 class="text-center mt-5"> All Predictions</h2>
+    <div class="row  justify-content-md-center">
+
+        <div class="col-md-6 mt-4">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Sepal Length</th>
+                        <th scope="col">Sepal Width</th>
+                        <th scope="col">Petal Length</th>
+                        <th scope="col">Petal Length</th>
+                        <th scope="col">Classification</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for data in dataset %}
+                    <tr>
+                        <th scope="row">{{data.id}}</th>
+                        <td>{{data.sepal_length}}</td>
+                        <td>{{data.sepal_width}}</td>
+                        <td>{{data.petal_length}}</td>
+                        <td>{{data.petal_width}}</td>
+                        <td>{{data.classification}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock main %}
